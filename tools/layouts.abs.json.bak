@@ -1,0 +1,525 @@
+{
+ "hero": {
+  "container": [
+   1752,
+   1743
+  ],
+  "slots": [
+   {
+    "left": 1.6,
+    "top": 5.62,
+    "width": 33.96
+   },
+   {
+    "left": 1.6,
+    "top": 29.32,
+    "width": 33.96
+   },
+   {
+    "left": 40.13,
+    "top": 7.06,
+    "width": 25.0
+   },
+   {
+    "left": 67.7,
+    "top": 0.0,
+    "width": 32.3
+   },
+   {
+    "left": 11.07,
+    "top": 51.23,
+    "width": 37.04
+   },
+   {
+    "left": 50.91,
+    "top": 67.01,
+    "width": 24.0
+   },
+   {
+    "left": 76.83,
+    "top": 51.23,
+    "width": 23.12
+   },
+   {
+    "left": 1.6,
+    "top": 80.21,
+    "width": 33.96
+   }
+  ]
+ },
+ "blue-bay": {
+  "container": [
+   1752,
+   1000
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 34.13
+   },
+   {
+    "left": 0.0,
+    "top": 46.0,
+    "width": 34.13
+   },
+   {
+    "left": 37.73,
+    "top": 8.0,
+    "width": 23.12
+   },
+   {
+    "left": 70.0,
+    "top": 44.0,
+    "width": 23.12
+   },
+   {
+    "left": 64.5,
+    "top": 0.0,
+    "width": 35.5
+   }
+  ]
+ },
+ "microfest": {
+  "container": [
+   1752,
+   1240
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 40.0
+   },
+   {
+    "left": 43.5,
+    "top": 6.0,
+    "width": 25.0
+   },
+   {
+    "left": 71.5,
+    "top": 0.0,
+    "width": 28.5
+   },
+   {
+    "left": 71.5,
+    "top": 26.5,
+    "width": 28.5
+   },
+   {
+    "left": 0.0,
+    "top": 42.5,
+    "width": 40.0
+   },
+   {
+    "left": 43.5,
+    "top": 55.0,
+    "width": 56.5
+   }
+  ]
+ },
+ "the-fridge": {
+  "container": [
+   1752,
+   709
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 62.0
+   },
+   {
+    "left": 65.5,
+    "top": 0.0,
+    "width": 25.0
+   },
+   {
+    "left": 65.5,
+    "top": 52.0,
+    "width": 34.5
+   }
+  ]
+ },
+ "imagine-family-x-automatic-01": {
+  "container": [
+   1752,
+   1160
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 45.0
+   },
+   {
+    "left": 48.5,
+    "top": 5.0,
+    "width": 22.0
+   },
+   {
+    "left": 73.5,
+    "top": 0.0,
+    "width": 26.5
+   },
+   {
+    "left": 73.5,
+    "top": 30.0,
+    "width": 26.5
+   },
+   {
+    "left": 0.0,
+    "top": 53.0,
+    "width": 31.0
+   },
+   {
+    "left": 34.5,
+    "top": 59.7,
+    "width": 40.0
+   },
+   {
+    "left": 77.5,
+    "top": 62.0,
+    "width": 22.5
+   }
+  ]
+ },
+ "imagine-family-x-automatic-02": {
+  "container": [
+   1752,
+   1500
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 55.0
+   },
+   {
+    "left": 58.5,
+    "top": 5.0,
+    "width": 41.5
+   },
+   {
+    "left": 0.0,
+    "top": 37.0,
+    "width": 36.0
+   },
+   {
+    "left": 39.5,
+    "top": 41.0,
+    "width": 34.0
+   },
+   {
+    "left": 77.0,
+    "top": 41.0,
+    "width": 23.0
+   },
+   {
+    "left": 25.0,
+    "top": 69.0,
+    "width": 40.0
+   }
+  ]
+ },
+ "paname-all-starz": {
+  "container": [
+   1752,
+   1000
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 45.0
+   },
+   {
+    "left": 0.0,
+    "top": 58.0,
+    "width": 36.0
+   },
+   {
+    "left": 48.5,
+    "top": 6.0,
+    "width": 28.0
+   },
+   {
+    "left": 55.0,
+    "top": 45.0,
+    "width": 45.0
+   }
+  ]
+ },
+ "la-ruche": {
+  "container": [
+   1752,
+   900
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 42.0
+   },
+   {
+    "left": 46.0,
+    "top": 12.0,
+    "width": 54.0
+   }
+  ]
+ },
+ "le-sample": {
+  "container": [
+   1752,
+   1000
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 45.0
+   },
+   {
+    "left": 0.0,
+    "top": 58.0,
+    "width": 36.0
+   },
+   {
+    "left": 48.5,
+    "top": 6.0,
+    "width": 28.0
+   },
+   {
+    "left": 55.0,
+    "top": 45.0,
+    "width": 45.0
+   }
+  ]
+ },
+ "interlude-01-house-session": {
+  "container": [
+   1752,
+   1080
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 62.0
+   },
+   {
+    "left": 65.5,
+    "top": 8.0,
+    "width": 34.5
+   },
+   {
+    "left": 0.0,
+    "top": 61.0,
+    "width": 31.0
+   },
+   {
+    "left": 34.5,
+    "top": 66.5,
+    "width": 31.0
+   },
+   {
+    "left": 69.0,
+    "top": 51.0,
+    "width": 31.0
+   }
+  ]
+ },
+ "interlude-02-blue-rose": {
+  "container": [
+   1752,
+   1150
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 62.0
+   },
+   {
+    "left": 65.5,
+    "top": 8.0,
+    "width": 34.5
+   },
+   {
+    "left": 0.0,
+    "top": 58.0,
+    "width": 40.0
+   },
+   {
+    "left": 43.5,
+    "top": 62.0,
+    "width": 34.5
+   }
+  ]
+ },
+ "interlude-03-nouveau-magnolia": {
+  "container": [
+   1752,
+   1150
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 62.0
+   },
+   {
+    "left": 65.5,
+    "top": 8.0,
+    "width": 34.5
+   },
+   {
+    "left": 0.0,
+    "top": 58.0,
+    "width": 40.0
+   },
+   {
+    "left": 43.5,
+    "top": 62.0,
+    "width": 34.5
+   }
+  ]
+ },
+ "interlude-04-limpasse": {
+  "container": [
+   1752,
+   1150
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 62.0
+   },
+   {
+    "left": 65.5,
+    "top": 0.0,
+    "width": 26.0
+   },
+   {
+    "left": 0.0,
+    "top": 60.0,
+    "width": 34.0
+   }
+  ]
+ },
+ "interlude-05-limpasse-bis": {
+  "container": [
+   1752,
+   1100
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 55.0
+   },
+   {
+    "left": 58.5,
+    "top": 6.0,
+    "width": 41.5
+   },
+   {
+    "left": 58.5,
+    "top": 47.0,
+    "width": 30.0
+   },
+   {
+    "left": 0.0,
+    "top": 54.0,
+    "width": 45.0
+   },
+   {
+    "left": 48.5,
+    "top": 77.5,
+    "width": 25.0
+   },
+   {
+    "left": 76.5,
+    "top": 77.5,
+    "width": 23.5
+   }
+  ]
+ },
+ "interlude-06-the-wrong-side": {
+  "container": [
+   1752,
+   1420
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 55.0
+   },
+   {
+    "left": 58.5,
+    "top": 5.0,
+    "width": 41.5
+   },
+   {
+    "left": 0.0,
+    "top": 43.0,
+    "width": 40.0
+   },
+   {
+    "left": 43.5,
+    "top": 46.0,
+    "width": 40.0
+   },
+   {
+    "left": 0.0,
+    "top": 76.0,
+    "width": 24.0
+   },
+   {
+    "left": 25.33,
+    "top": 80.0,
+    "width": 24.0
+   },
+   {
+    "left": 50.67,
+    "top": 76.0,
+    "width": 24.0
+   },
+   {
+    "left": 76.0,
+    "top": 80.0,
+    "width": 24.0
+   }
+  ]
+ },
+ "interlude-07-lebanon-concert": {
+  "container": [
+   1752,
+   1150
+  ],
+  "slots": [
+   {
+    "left": 0.0,
+    "top": 0.0,
+    "width": 62.0
+   },
+   {
+    "left": 65.5,
+    "top": 8.0,
+    "width": 34.5
+   },
+   {
+    "left": 0.0,
+    "top": 58.0,
+    "width": 40.0
+   },
+   {
+    "left": 43.5,
+    "top": 62.0,
+    "width": 34.5
+   }
+  ]
+ }
+}

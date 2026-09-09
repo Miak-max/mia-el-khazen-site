@@ -1,0 +1,9 @@
+brief/
+shots/
+tools/
+[0-9][0-9]_*/
+build_images.py
+screenshot.sh
+serve.py
+CLAUDE.md
+images/*/.build.json

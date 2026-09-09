@@ -1,0 +1,50 @@
+# CLAUDE.md — Frontend Website Rules
+
+## Always Do First
+- **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+- Read `brand_assets/COLOURS.md` and glance at `brief/reference-render.png` (the approved layout).
+
+## Project specifics — Mia El Khazen
+- One page, `index.html`, all styles inline. Structure is fixed by `brief/Website.pdf`: hero (name, roles, ABOUT ME link, 8-slot collage on grid paper) → About (heading, two paragraphs, services line, portrait on a blue block) → blue Work section with 15 project blocks separated by thin rules.
+- Type: **Anton** for name, roles, nav, headings, project titles and descriptions. **Bebas Neue** for the about paragraph and services line. Nothing else.
+- Colours: vivid blue `#0c0ce4`, paper `#f8f8f7` with a faint SVG grain and **no grid lines** (user removed them 8 Sep 2026), ink `#111111`, placeholder grey `#cbd1d8`. No other colours.
+- The eight hero squares are project placeholders too: `<a class="ph" href="#<slug>">` linking to the first eight projects, showing `images/<slug>/cover.jpg` then `01.jpg` via `phErr()`.
+- Source photos arrive as `NN_Name/` folders in the project root (e.g. `01_Bluebay/`). Map each in `SOURCES` inside `build_images.py` (photos in `order`, clips in `videos`), run it, then adjust that project's slots and add a `.collage--<slug>` layout if the count differs from four. Videos are transcoded to 720p H.264 by `tools/transcode.swift` (no ffmpeg on this Mac) and shown as `<figure class="ph ph--wide ph--video"><video muted loop playsinline controls poster=…>` (the script strips `controls` and adds the Sound pill; `controls` stays in the HTML only as the no-JS fallback). Silent loops carry `data-silent` (no pill); long recordings get `data-autoplay="off"` + `preload="none"` and a Play button. Layout classes are generated per collage (`collage--hero`, `collage--p-<slug>`). Source folders `01_…`–`15_…` map to slugs in `build_images.py` (`06_Imagine x Automatic` → IFxA 01, `15_Imagine x Automatic 0307` → IFxA 02, `14_Interlude Bekaata` → Interlude 07 - Lebanon Concert). Never edit or delete the source folders.
+- Image slots are `<figure class="ph"><img src="images/…" onerror="this.remove()"></figure>`: missing files stay grey. Do not replace them with `placehold.co`.
+- **Never crop media.** Every slot carries `style="aspect-ratio:W/H"` from its own photo or poster, set by `tools/layout.py`. That tool *composes* each collage (lead item in a wide column, then staggered masonry columns with a constant gutter and alternating widths — the brief's scatter without holes) and regenerates the CSS between the `LAYOUTS` markers. `tools/layouts.json` records the result; set `"manual": true` on a key and edit its slots to place by hand. Run it after every `build_images.py` change. The user rejected a tidy justified-rows grid (9 Sep 2026): keep the scattered collage character.
+- Design layer added 9 Sep 2026 at the user's request ("more appealing and design led", same identity): slim fixed `.topbar` that appears after the hero (paper on paper, blue over the Work section), `SELECTED WORK / 15 PROJECTS` label, numbered project headers (`.project__num`, Bebas) with Bebas descriptions, hero hover captions (`.ph__cap`), reveal-on-scroll on `.ph` (opacity/transform only, off under reduced motion), custom video buttons (`.vb--sound` pill toggles mute, one clip with sound at a time; `.vb--play` for `data-autoplay="off"` recordings, which then show native controls), and a `.foot` footer (name, roles, Paris, Work/About/Top links — still no contact details, none were supplied). Keep all of it inside Anton + Bebas + blue + paper.
+- The reveal means `.ph` starts at opacity 0 when JS runs; `shots/frame.html` adds `.in` to every slot before capturing.
+
+## Reference Images
+- If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content. Do not improve or add to the design.
+- If no reference image: design from scratch with high craft (see guardrails below).
+- Screenshot your output, compare against reference, fix mismatches, re-screenshot. Do at least 2 comparison rounds. Stop only when no visible differences remain or user says so.
+
+## Local Server
+- **Always serve on localhost** — never open a `file:///` URL.
+- Start the dev server: `python3 serve.py` (serves the project root at `http://localhost:3000`). Port 3000 is often held by another site's `serve.py` — check with `lsof -nP -iTCP:3000 -sTCP:LISTEN` and, if taken, run `python3 serve.py 3010` instead. Never kill the other server.
+- `serve.py` lives in the project root. Start it in the background before previewing.
+- If the server is already running, do not start a second instance.
+
+## Screenshot Workflow
+- Headless Chrome is available: `./screenshot.sh <url> <out.png> [width] [height]` (use a tall height, e.g. 6400, for a full-page capture).
+- Headless Chrome will not go narrower than 500px and ignores `#anchor` scrolling. Use `shots/frame.html`: `?w=390` for mobile (capture at 600px wide, crop the left 390px) and `?w=1976&id=<slug>` to put one project block at the top of the capture.
+- Save captures under `shots/` (git-ignored). Compare against `brief/reference-render.png`.
+
+## Brand Assets
+- Always check `brand_assets/` before designing. `portrait-mia.png` is the full-resolution cutout; the web-sized versions live in `images/`.
+- **Never** pull projects, images, copy or branding from any other site. This is Mia's own portfolio; the brief in `brief/` and her source folders are the only content sources.
+- If assets exist there, use them. Do not use placeholders where real assets are available.
+
+## Anti-Generic Guardrails
+- **Colors:** Never introduce colours outside the brand tokens.
+- **Typography:** Anton and Bebas Neue only. Tight line-height on display sizes (`.9`–`1`), `1.12` on Bebas body copy.
+- **Animations:** Only animate `transform` and `opacity`. Never `transition-all`.
+- **Interactive states:** Every clickable element needs hover, focus-visible, and active states. No exceptions.
+- **Spacing:** vw-based rhythm measured from the brief (`--margin: 5.7vw`). Don't introduce arbitrary pixel values.
+
+## Hard Rules
+- Do not add sections, features, or content not in the reference
+- Do not "improve" a reference design — match it
+- Do not stop after one screenshot pass
+- Do not use `transition-all`

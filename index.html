@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0c0ce4">
+
+<title>Mia El Khazen · Architect &amp; Production Designer, Paris</title>
+<meta name="description" content="Mia El Khazen is a Paris-based architect and production designer creating immersive environments for music, fashion and live performance. Set &amp; production design, spatial concepts, fashion campaign art direction.">
+<meta name="author" content="Mia El Khazen">
+<meta name="robots" content="index, follow">
+<!-- TODO once the domain is confirmed: add <link rel="canonical">, og:url and an og:image (1200x630). -->
+
+<link rel="icon" href="brand_assets/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mia El Khazen">
+<meta property="og:title" content="Mia El Khazen · Architect &amp; Production Designer, Paris">
+<meta property="og:description" content="Paris-based architect and production designer creating immersive environments for music, fashion and live performance.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mia El Khazen · Architect &amp; Production Designer, Paris">
+<meta name="twitter:description" content="Paris-based architect and production designer creating immersive environments for music, fashion and live performance.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<script>
+document.documentElement.classList.add('js');
+/* image slots: try the fallback file once, then leave the grey placeholder */
+function phErr(img){ if(img.dataset.fallback){ img.src=img.dataset.fallback; delete img.dataset.fallback; } else { img.remove(); } }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mia El Khazen",
+  "jobTitle": ["Architect", "Production Designer"],
+  "description": "Paris-based architect and production designer creating immersive environments for music, fashion and live performance.",
+  "email": "mia.elk.pro@gmail.com",
+  "telephone": "+33651356310",
+  "address": { "@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR" },
+  "knowsAbout": ["Set Design", "Production Design", "Stage Design", "Spatial Design", "Scenography", "Fashion Campaign Art Direction", "Architecture"]
+}
+</script>
+
+<style>
+/* =============================================
+   MIA EL KHAZEN — single-page portfolio
+   Tokens: see brand_assets/COLOURS.md
+   Layout matches brief/Website.pdf (1024pt artboard)
+   ============================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --blue:#0c0ce4;
+  --paper:#f8f8f7;
+  --ink:#111111;
+  --white:#ffffff;
+  --ph:#cbd1d8;
+  --rule:rgba(255,255,255,.45);
+
+  --margin:5.7vw;
+
+  --display:'Anton',Impact,'Arial Narrow',sans-serif;
+  --body:'Bebas Neue','Oswald',Impact,sans-serif;
+
+  --fs-name:clamp(3rem,8.15vw,10.5rem);
+  --fs-role:clamp(1.2rem,3.1vw,4rem);
+  --fs-nav:clamp(1.1rem,3vw,3.8rem);
+  --fs-h2:clamp(2.4rem,5vw,6.4rem);
+  --fs-body:clamp(1.15rem,1.53vw,2rem);
+  --fs-title:clamp(1.9rem,2.9vw,3.7rem);
+  --fs-desc:clamp(1rem,1.45vw,1.85rem);
+}
+
+html{
+  /* paper on top, blue below — so rubber-band overscroll matches each end of the page */
+  background:linear-gradient(var(--paper) 50%,var(--blue) 50%);
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  line-height:1.15;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2{font-weight:400}
+
+.skip{position:absolute;left:-999px;top:0;z-index:10;padding:.5em 1em;background:var(--white);color:var(--blue);font-family:var(--display);text-transform:uppercase}
+.skip:focus{left:var(--margin)}
+
+/* ── PAPER (hero + about) ───────────────────── */
+/* Paper: flat tone plus an SVG fractal-noise grain overlay (grid lines removed on request). */
+.paper{
+  position:relative;
+  color:var(--ink);
+  background-color:var(--paper);
+}
+.paper::before{
+  content:'';
+  position:absolute;inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .1 0 0 0 0 .1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size:260px 260px;
+  opacity:.13;
+  mix-blend-mode:multiply;
+}
+.paper>*{position:relative}
+
+/* ── HERO ───────────────────────────────────── */
+.hero{padding:5.6vw var(--margin) 0}
+.hero__top{display:flex;justify-content:space-between;align-items:baseline;gap:3vw}
+.hero__id{display:inline-flex;flex-direction:column}
+.hero__name{
+  font-family:var(--display);
+  font-size:var(--fs-name);
+  line-height:.9;
+  color:var(--blue);
+  text-transform:uppercase;
+}
+.hero__roles{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.2em 2em;
+  font-family:var(--display);
+  font-size:var(--fs-role);
+  line-height:1;
+  color:var(--blue);
+  text-transform:uppercase;
+  margin-top:.28em;
+}
+.hero__nav a{
+  display:inline-block;
+  font-family:var(--display);
+  font-size:var(--fs-nav);
+  line-height:1;
+  color:var(--blue);
+  text-transform:uppercase;
+  text-decoration:none;
+  white-space:nowrap;
+  border-bottom:.07em solid transparent;
+  transition:border-color .2s ease,opacity .2s ease;
+}
+.hero__nav a:hover{border-color:currentColor}
+.hero__nav a:focus-visible{outline:2px solid var(--blue);outline-offset:6px}
+.hero__nav a:active{opacity:.6}
+@media (min-width:600px){ .hero__name{white-space:nowrap} }
+@media (max-width:599px){
+  .hero__top{flex-wrap:wrap}
+  .hero__nav{width:100%;text-align:right;margin-top:1.2em}
+}
+
+/* ── COLLAGES (image slots) ─────────────────── */
+.collage{position:relative;margin:.8vw var(--margin) 0}
+.hero .collage{margin-left:0;margin-right:0}
+.ph{display:block;background:var(--ph);overflow:hidden;width:100%}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.19,1,.22,1)}
+.ph video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+a.ph{color:inherit;text-decoration:none;transition:background-color .25s ease}
+a.ph:hover{background:#b7bfc9}
+a.ph:hover img{transform:scale(1.04)}
+a.ph:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+a.ph:active{opacity:.85}
+@media (prefers-reduced-motion:reduce){ .ph img,a.ph{transition:none} a.ph:hover img{transform:none} }
+
+@media (min-width:900px){
+  .collage>.ph{position:absolute;height:auto}
+/* LAYOUTS:BEGIN */ /* generated by tools/layout.py — edit tools/layouts.json (manual: true) to override */
+  .collage--hero{aspect-ratio:100/78.94}
+  .collage--hero .ph:nth-child(1){left:36.40%;top:0.00%;width:29.20%}
+  .collage--hero .ph:nth-child(2){left:0.00%;top:5.07%;width:33.00%}
+  .collage--hero .ph:nth-child(3){left:69.00%;top:10.13%;width:31.00%}
+  .collage--hero .ph:nth-child(4){left:40.49%;top:28.95%;width:25.11%}
+  .collage--hero .ph:nth-child(5){left:73.34%;top:36.53%;width:26.66%}
+  .collage--hero .ph:nth-child(6){left:4.62%;top:37.19%;width:28.38%}
+  .collage--hero .ph:nth-child(7){left:36.40%;top:54.79%;width:29.20%}
+  .collage--hero .ph:nth-child(8){left:69.00%;top:63.34%;width:31.00%}
+  .collage--p-blue-bay{aspect-ratio:100/116.31}
+  .collage--p-blue-bay .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-blue-bay .ph:nth-child(2){left:63.40%;top:6.02%;width:36.60%}
+  .collage--p-blue-bay .ph:nth-child(3){left:68.52%;top:29.91%;width:31.48%}
+  .collage--p-blue-bay .ph:nth-child(4){left:8.40%;top:37.29%;width:51.60%}
+  .collage--p-blue-bay .ph:nth-child(5){left:63.40%;top:73.45%;width:36.60%}
+  .collage--p-microfest{aspect-ratio:100/80.63}
+  .collage--p-microfest .ph:nth-child(1){left:0.00%;top:0.00%;width:65.60%}
+  .collage--p-microfest .ph:nth-child(2){left:69.00%;top:3.72%;width:31.00%}
+  .collage--p-microfest .ph:nth-child(3){left:73.34%;top:55.56%;width:26.66%}
+  .collage--p-microfest .ph:nth-child(4){left:4.62%;top:58.12%;width:28.38%}
+  .collage--p-microfest .ph:nth-child(5){left:36.40%;top:58.12%;width:29.20%}
+  .collage--p-microfest .ph:nth-child(6){left:69.00%;top:78.37%;width:31.00%}
+  .collage--p-the-fridge{aspect-ratio:100/70.90}
+  .collage--p-the-fridge .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-the-fridge .ph:nth-child(2){left:63.40%;top:9.87%;width:36.60%}
+  .collage--p-the-fridge .ph:nth-child(3){left:0.00%;top:52.40%;width:60.00%}
+  .collage--p-imagine-family-x-automatic-01{aspect-ratio:100/92.44}
+  .collage--p-imagine-family-x-automatic-01 .ph:nth-child(1){left:0.00%;top:0.00%;width:65.60%}
+  .collage--p-imagine-family-x-automatic-01 .ph:nth-child(2){left:69.00%;top:3.25%;width:31.00%}
+  .collage--p-imagine-family-x-automatic-01 .ph:nth-child(3){left:73.34%;top:51.67%;width:26.66%}
+  .collage--p-imagine-family-x-automatic-01 .ph:nth-child(4){left:4.62%;top:51.71%;width:28.38%}
+  .collage--p-imagine-family-x-automatic-01 .ph:nth-child(5){left:36.40%;top:51.71%;width:29.20%}
+  .collage--p-imagine-family-x-automatic-01 .ph:nth-child(6){left:69.00%;top:74.56%;width:31.00%}
+  .collage--p-imagine-family-x-automatic-01 .ph:nth-child(7){left:0.00%;top:75.84%;width:33.00%}
+  .collage--p-imagine-family-x-automatic-02{aspect-ratio:100/68.87}
+  .collage--p-imagine-family-x-automatic-02 .ph:nth-child(1){left:0.00%;top:0.00%;width:65.60%}
+  .collage--p-imagine-family-x-automatic-02 .ph:nth-child(2){left:69.00%;top:4.36%;width:31.00%}
+  .collage--p-imagine-family-x-automatic-02 .ph:nth-child(3){left:73.34%;top:39.28%;width:26.66%}
+  .collage--p-imagine-family-x-automatic-02 .ph:nth-child(4){left:4.62%;top:54.01%;width:28.38%}
+  .collage--p-imagine-family-x-automatic-02 .ph:nth-child(5){left:36.40%;top:54.01%;width:29.20%}
+  .collage--p-imagine-family-x-automatic-02 .ph:nth-child(6){left:69.00%;top:70.01%;width:31.00%}
+  .collage--p-paname-all-starz{aspect-ratio:100/82.11}
+  .collage--p-paname-all-starz .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-paname-all-starz .ph:nth-child(2){left:63.40%;top:8.52%;width:36.60%}
+  .collage--p-paname-all-starz .ph:nth-child(3){left:68.52%;top:42.39%;width:31.48%}
+  .collage--p-paname-all-starz .ph:nth-child(4){left:8.40%;top:52.87%;width:51.60%}
+  .collage--p-la-ruche{aspect-ratio:100/73.34}
+  .collage--p-la-ruche .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-la-ruche .ph:nth-child(2){left:63.40%;top:9.54%;width:36.60%}
+  .collage--p-le-sample{aspect-ratio:100/77.82}
+  .collage--p-le-sample .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-le-sample .ph:nth-child(2){left:63.40%;top:8.99%;width:36.60%}
+  .collage--p-le-sample .ph:nth-child(3){left:68.52%;top:44.73%;width:31.48%}
+  .collage--p-le-sample .ph:nth-child(4){left:8.40%;top:55.78%;width:51.60%}
+  .collage--p-interlude-01-house-session{aspect-ratio:100/83.61}
+  .collage--p-interlude-01-house-session .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-interlude-01-house-session .ph:nth-child(2){left:63.40%;top:8.37%;width:36.60%}
+  .collage--p-interlude-01-house-session .ph:nth-child(3){left:68.52%;top:41.63%;width:31.48%}
+  .collage--p-interlude-01-house-session .ph:nth-child(4){left:8.40%;top:44.43%;width:51.60%}
+  .collage--p-interlude-01-house-session .ph:nth-child(5){left:63.40%;top:70.81%;width:36.60%}
+  .collage--p-interlude-02-blue-rose{aspect-ratio:100/71.50}
+  .collage--p-interlude-02-blue-rose .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-interlude-02-blue-rose .ph:nth-child(2){left:63.40%;top:9.79%;width:36.60%}
+  .collage--p-interlude-02-blue-rose .ph:nth-child(3){left:68.52%;top:48.62%;width:31.48%}
+  .collage--p-interlude-02-blue-rose .ph:nth-child(4){left:8.40%;top:51.96%;width:51.60%}
+  .collage--p-interlude-03-nouveau-magnolia{aspect-ratio:100/75.85}
+  .collage--p-interlude-03-nouveau-magnolia .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-interlude-03-nouveau-magnolia .ph:nth-child(2){left:63.40%;top:9.23%;width:36.60%}
+  .collage--p-interlude-03-nouveau-magnolia .ph:nth-child(3){left:68.52%;top:45.89%;width:31.48%}
+  .collage--p-interlude-03-nouveau-magnolia .ph:nth-child(4){left:8.40%;top:48.98%;width:51.60%}
+  .collage--p-interlude-04-limpasse{aspect-ratio:100/82.70}
+  .collage--p-interlude-04-limpasse .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-interlude-04-limpasse .ph:nth-child(2){left:63.40%;top:8.46%;width:36.60%}
+  .collage--p-interlude-04-limpasse .ph:nth-child(3){left:0.00%;top:44.92%;width:60.00%}
+  .collage--p-interlude-05-limpasse-bis{aspect-ratio:100/59.67}
+  .collage--p-interlude-05-limpasse-bis .ph:nth-child(1){left:0.00%;top:0.00%;width:65.60%}
+  .collage--p-interlude-05-limpasse-bis .ph:nth-child(2){left:69.00%;top:5.03%;width:31.00%}
+  .collage--p-interlude-05-limpasse-bis .ph:nth-child(3){left:73.34%;top:39.95%;width:26.66%}
+  .collage--p-interlude-05-limpasse-bis .ph:nth-child(4){left:4.62%;top:67.54%;width:28.38%}
+  .collage--p-interlude-05-limpasse-bis .ph:nth-child(5){left:36.40%;top:67.54%;width:29.20%}
+  .collage--p-interlude-05-limpasse-bis .ph:nth-child(6){left:69.00%;top:70.78%;width:31.00%}
+  .collage--p-interlude-06-the-wrong-side{aspect-ratio:100/78.23}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(1){left:0.00%;top:0.00%;width:65.60%}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(2){left:69.00%;top:3.84%;width:31.00%}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(3){left:73.34%;top:34.61%;width:26.66%}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(4){left:4.62%;top:51.52%;width:28.38%}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(5){left:36.40%;top:51.52%;width:29.20%}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(6){left:69.00%;top:58.13%;width:31.00%}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(7){left:0.00%;top:76.27%;width:33.00%}
+  .collage--p-interlude-06-the-wrong-side .ph:nth-child(8){left:40.49%;top:76.86%;width:25.11%}
+  .collage--p-interlude-07-lebanon-concert{aspect-ratio:100/66.17}
+  .collage--p-interlude-07-lebanon-concert .ph:nth-child(1){left:0.00%;top:0.00%;width:60.00%}
+  .collage--p-interlude-07-lebanon-concert .ph:nth-child(2){left:63.40%;top:10.58%;width:36.60%}
+  .collage--p-interlude-07-lebanon-concert .ph:nth-child(3){left:68.52%;top:46.83%;width:31.48%}
+  .collage--p-interlude-07-lebanon-concert .ph:nth-child(4){left:8.40%;top:56.14%;width:51.60%}
+  /* LAYOUTS:END */
+}
+@media (max-width:899px){
+  .collage{columns:2;column-gap:3vw;margin-top:6vw}
+  .collage>.ph{break-inside:avoid;margin-bottom:3vw}
+  .ph--video,.ph--wide{column-span:all}
+}
+
+/* ── ABOUT ──────────────────────────────────── */
+.about{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 41.5%;
+  column-gap:4.5%;
+  align-items:stretch;
+  padding:18vw var(--margin) 6.8vw;
+}
+.about__text{display:flex;flex-direction:column}
+.about__text h2{
+  font-family:var(--display);
+  font-size:var(--fs-h2);
+  line-height:.95;
+  color:var(--blue);
+  text-transform:uppercase;
+}
+.about__text p{font-size:var(--fs-body);line-height:1.34;text-transform:uppercase}
+.about__text h2+p{margin-top:1em}
+.about__text p+p{margin-top:.25em}
+.about__services{margin-top:auto;padding-top:3em}
+.about__services strong{font-weight:400;color:var(--blue)}
+.about__services span{white-space:nowrap}
+/* portrait: body is 84.6% of the block's width, head pops ~18% above it, feet clip at the bottom edge (as in the brief) */
+.about__photo{position:relative;aspect-ratio:727/805;background:var(--blue);clip-path:inset(-60% 0 0 0)}
+.about__photo img{position:absolute;left:50%;bottom:-15%;width:84.6%;height:auto;transform:translateX(-50%)}
+@media (max-width:899px){
+  .about{grid-template-columns:1fr;row-gap:26vw;padding-top:16vw}
+  .about__services{padding-top:2em}
+  .about__photo{width:84%;margin:0 auto}
+}
+
+/* ── WORK (blue) ────────────────────────────── */
+.work{background:var(--blue);color:var(--white);padding:5vw 0 7vw}
+.project{padding:7vw 0 4vw;border-top:1px solid var(--rule)}
+.project:first-child{border-top:0;padding-top:0}
+.project__head{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:2.4vw;align-items:baseline;padding:0 var(--margin)}
+.project__num{font-family:var(--body);font-size:clamp(1rem,1.5vw,1.6rem);letter-spacing:.08em;opacity:.7;grid-row:1}
+.project h2{font-family:var(--display);font-size:var(--fs-title);line-height:1}
+.project p{grid-column:2;font-family:var(--body);font-size:clamp(1.05rem,1.35vw,1.6rem);letter-spacing:.035em;text-transform:uppercase;line-height:1.25;margin-top:.35em;max-width:62ch;opacity:.92}
+.project .collage{margin-top:3.8vw}
+@media (max-width:899px){
+  .project{padding:9vw 0 5vw}
+  .project__head{grid-template-columns:1fr;row-gap:.2em}
+  .project p{grid-column:1}
+}
+
+/* ── POLISH: nav, labels, video buttons, captions, reveal, footer ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:2vw;padding:.85rem var(--margin);font-family:var(--display);text-transform:uppercase;font-size:clamp(.85rem,1.1vw,1.15rem);line-height:1;color:var(--blue);background:rgba(248,248,247,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transform:translateY(-110%);transition:transform .5s cubic-bezier(.19,1,.22,1),background .3s ease,color .3s ease}
+.topbar.is-on{transform:none}
+.topbar--blue{background:rgba(12,12,228,.88);color:var(--paper)}
+.topbar a{color:inherit;text-decoration:none;border-bottom:.08em solid transparent;transition:border-color .2s ease}
+.topbar a:hover{border-color:currentColor}
+.topbar a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.topbar nav{display:flex;gap:1.8em}
+
+.work__label{display:flex;justify-content:space-between;gap:2vw;padding:0 var(--margin) 4.5vw;font-family:var(--body);font-size:clamp(1rem,1.35vw,1.5rem);letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+
+.ph--video{position:relative}
+.ph--video video{cursor:pointer}
+.vb{position:absolute;left:.9rem;bottom:.9rem;z-index:2;font-family:var(--display);text-transform:uppercase;font-size:clamp(.72rem,.85vw,.95rem);letter-spacing:.04em;line-height:1;padding:.6em .85em .5em;border:0;border-radius:999px;background:var(--paper);color:var(--blue);cursor:pointer;opacity:.92;transition:opacity .2s ease,transform .2s ease,background-color .2s ease,color .2s ease}
+.vb:hover{opacity:1;transform:translateY(-1px)}
+.vb:active{transform:translateY(0)}
+.vb:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
+.vb[aria-pressed="true"]{background:var(--blue);color:var(--paper);box-shadow:0 0 0 2px var(--paper)}
+.vb--play{left:50%;bottom:50%;transform:translate(-50%,50%);font-size:clamp(.9rem,1.1vw,1.2rem);padding:.95em 1.4em .8em}
+.vb--play:hover{transform:translate(-50%,50%) scale(1.04)}
+.ph--video.is-playing .vb--play{display:none}
+
+a.ph{position:relative}
+.ph__cap{position:absolute;left:.8rem;bottom:.8rem;z-index:2;font-family:var(--display);text-transform:uppercase;font-size:clamp(.7rem,.9vw,1rem);line-height:1;padding:.55em .75em .45em;background:var(--blue);color:var(--paper);opacity:0;transform:translateY(6px);transition:opacity .25s ease,transform .25s cubic-bezier(.19,1,.22,1);pointer-events:none;white-space:nowrap}
+a.ph:hover .ph__cap,a.ph:focus-visible .ph__cap{opacity:1;transform:none}
+@media (hover:none){ .ph__cap{opacity:1;transform:none} }
+
+.js .ph{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.19,1,.22,1),transform .9s cubic-bezier(.19,1,.22,1),background-color .25s ease}
+.js .ph.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){ .js .ph{opacity:1;transform:none;transition:none} .topbar{transition:none} }
+
+.foot{background:var(--blue);color:var(--paper);padding:6vw var(--margin) 3.5vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-end;gap:3vw;flex-wrap:wrap}
+.foot__name{font-family:var(--display);font-size:clamp(2.2rem,5vw,6rem);line-height:.9;text-transform:uppercase}
+.foot__meta{font-family:var(--body);font-size:clamp(1rem,1.3vw,1.5rem);letter-spacing:.06em;text-transform:uppercase;margin-top:.7em;opacity:.8}
+.foot__contact{display:flex;flex-wrap:wrap;gap:.6em 1.8em;margin-top:1.4em;font-family:var(--display);font-size:clamp(1.05rem,1.6vw,1.9rem);line-height:1}
+.foot nav{display:flex;gap:1.6em;font-family:var(--display);text-transform:uppercase;font-size:clamp(.9rem,1.1vw,1.2rem);line-height:1;padding-bottom:.3em}
+.foot a{color:inherit;text-decoration:none;border-bottom:.08em solid transparent;transition:border-color .2s ease}
+.foot a:hover{border-color:currentColor}
+.foot a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to work</a>
+<div class="topbar">
+  <a class="topbar__name" href="#top">Mia El Khazen</a>
+  <nav aria-label="Page"><a href="#work">Work</a><a href="#about">About</a></nav>
+</div>
+<main id="top">
+
+<div class="paper">
+  <header class="hero">
+    <div class="hero__top">
+      <div class="hero__id">
+        <h1 class="hero__name">Mia El Khazen</h1>
+        <p class="hero__roles"><span>Architect</span><span>Production Designer</span></p>
+      </div>
+      <nav class="hero__nav" aria-label="Primary"><a href="#about">About me</a></nav>
+    </div>
+
+    <!-- Hero collage: eight project placeholders linking to the first eight projects.
+         Each shows images/<slug>/cover.jpg, falling back to that project's 01.jpg.
+         Slots 3, 6 and 7 are portrait; the rest are landscape. -->
+    <nav class="collage collage--hero" aria-label="Selected work">
+      <a class="ph" href="#blue-bay" aria-label="Blue Bay" style="aspect-ratio:1600/1066"><img src="images/blue-bay/cover.jpg" data-fallback="images/blue-bay/01.jpg" alt="" loading="eager" decoding="async" onerror="phErr(this)"><span class="ph__cap">Blue Bay</span></a>
+      <a class="ph" href="#microfest" aria-label="Microfest" style="aspect-ratio:1500/998"><img src="images/microfest/cover.jpg" data-fallback="images/microfest/01.jpg" alt="" loading="eager" decoding="async" onerror="phErr(this)"><span class="ph__cap">Microfest</span></a>
+      <a class="ph ph--tall" href="#the-fridge" aria-label="The Fridge" style="aspect-ratio:1280/720"><img src="images/the-fridge/cover.jpg" data-fallback="images/the-fridge/01.jpg" alt="" loading="eager" decoding="async" onerror="phErr(this)"><span class="ph__cap">The Fridge</span></a>
+      <a class="ph" href="#imagine-family-x-automatic-01" aria-label="Imagine Family x Automatic 01" style="aspect-ratio:1600/1083"><img src="images/imagine-family-x-automatic-01/cover.jpg" data-fallback="images/imagine-family-x-automatic-01/01.jpg" alt="" loading="eager" decoding="async" onerror="phErr(this)"><span class="ph__cap">Imagine Family x Automatic 01</span></a>
+      <a class="ph" href="#imagine-family-x-automatic-02" aria-label="Imagine Family x Automatic 02" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-02/cover.jpg" data-fallback="images/imagine-family-x-automatic-02/01.jpg" alt="" loading="lazy" decoding="async" onerror="phErr(this)"><span class="ph__cap">Imagine Family x Automatic 02</span></a>
+      <a class="ph ph--tall" href="#paname-all-starz" aria-label="Paname All Starz" style="aspect-ratio:1600/1067"><img src="images/paname-all-starz/cover.jpg" data-fallback="images/paname-all-starz/01.jpg" alt="" loading="lazy" decoding="async" onerror="phErr(this)"><span class="ph__cap">Paname All Starz</span></a>
+      <a class="ph ph--tall" href="#la-ruche" aria-label="La Ruche" style="aspect-ratio:1309/1600"><img src="images/la-ruche/cover.jpg" data-fallback="images/la-ruche/01.jpg" alt="" loading="lazy" decoding="async" onerror="phErr(this)"><span class="ph__cap">La Ruche</span></a>
+      <a class="ph" href="#le-sample" aria-label="Le Sample" style="aspect-ratio:1600/1067"><img src="images/le-sample/cover.jpg" data-fallback="images/le-sample/01.jpg" alt="" loading="lazy" decoding="async" onerror="phErr(this)"><span class="ph__cap">Le Sample</span></a>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <div class="about__text">
+      <h2>About me</h2>
+      <p>Bridging the gap between spatial architecture and live experience, I am a Paris-based designer creating immersive environments for music, fashion, and live performance.</p>
+      <p>With a background in architecture, my practice centers on translating sound, narrative, and brand identity into tangible physical worlds ranging from festival stages and intimate concert sets to fashion campaigns. Operating out of my Paris atelier, I combine conceptual spatial design with hands-on fabrication, prototyping and building much of what I design under one roof to ensure every detail translates seamlessly from drawing to production.</p>
+      <p class="about__services"><strong>Services:</strong> <span>Set &amp; Production Design</span> | <span>Spatial Concepts</span> | <span>Fashion Campaign Art Direction</span></p>
+    </div>
+    <figure class="about__photo">
+      <picture>
+        <source srcset="images/portrait-mia.webp" type="image/webp">
+        <img src="images/portrait-mia.png" width="900" height="1569" alt="Mia El Khazen crouching with her chin on her hand, wearing pink glasses and a pink and purple striped knit">
+      </picture>
+    </figure>
+  </section>
+</div>
+
+<!-- Projects: each has four slots. Drop images into images/<slug>/ as 01.jpg … 04.jpg.
+     Slot 4 is portrait; slots 1–3 are landscape. Missing files simply stay grey. -->
+<section class="work" id="work" aria-label="Projects">
+  <p class="work__label"><span>Selected work</span><span>15 projects</span></p>
+  <article class="project" id="blue-bay">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">01</span>
+      <h2>Blue Bay</h2>
+      <p>Art direction for Blue Bay resort’s launch campaign</p>
+    </div>
+    <div class="collage collage--p-blue-bay">
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/blue-bay/01.jpg" alt="Two women in striped swimsuits laughing on the bonnet of a white vintage convertible by the sea" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/blue-bay/02.jpg" alt="A woman in an orange swimsuit and yellow crochet cover-up sitting on rocks under a blue parasol" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--tall" style="aspect-ratio:1066/1600"><img src="images/blue-bay/03.jpg" alt="A woman in a checked swimsuit and cap sitting on the edge of a boat, holding a record" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--tall" style="aspect-ratio:1132/1600"><img src="images/blue-bay/04.jpg" alt="A printed photograph of a woman lying on a beach towel, shown upside down" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide" style="aspect-ratio:1600/1066"><img src="images/blue-bay/05.jpg" alt="Two women relaxing on yellow and blue deck chairs on the sand between rocks, with a picnic and cool box" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="microfest">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">02</span>
+      <h2>Microfest</h2>
+      <p>Stage design for a small-scale electronic music festival in the mountains</p>
+    </div>
+    <div class="collage collage--p-microfest">
+      <figure class="ph" style="aspect-ratio:1600/1060"><img src="images/microfest/01.jpg" alt="The Microfest stage being built on a bare mountainside: scaffold frames, speaker stacks, a large red disc and a parasol, with a ski lift behind" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--tall" style="aspect-ratio:1065/1319"><img src="images/microfest/02.jpg" alt="The red disc with a painted face above the stage scaffold, flight cases and a pink hand-shaped cut-out in the foreground" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--video" style="aspect-ratio:1280/720"><video src="images/microfest/video-01.mp4" data-silent poster="images/microfest/video-01-poster.jpg" muted loop playsinline preload="metadata" aria-label="Night projections on the stage: patterned light moving over the parasols around the red disc face"></video></figure>
+      <figure class="ph ph--video" style="aspect-ratio:1280/720"><video src="images/microfest/video-02.mp4" data-silent poster="images/microfest/video-02-poster.jpg" muted loop playsinline preload="metadata" aria-label="Close-up of projected patterns moving across the red disc"></video></figure>
+      <figure class="ph" style="aspect-ratio:1500/998"><img src="images/microfest/03.jpg" alt="The stage at night with kaleidoscopic projections covering the parasols and the disc face" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/microfest/video-03.mp4" data-silent poster="images/microfest/video-03-poster.jpg" muted loop playsinline preload="metadata" aria-label="Colour washes projected over the disc and parasols at night"></video></figure>
+    </div>
+  </article>
+
+  <article class="project" id="the-fridge">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">03</span>
+      <h2>The Fridge</h2>
+      <p>Visual compilation for Serge Volant’s live performance</p>
+    </div>
+    <div class="collage collage--p-the-fridge">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/the-fridge/video-01.mp4" poster="images/the-fridge/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of the visual compilation projected behind Serge Volant’s live modular performance at The Fridge"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph ph--wide" style="aspect-ratio:567/423"><img src="images/the-fridge/01.jpg" alt="Serge Volant at his desk on stage under The Fridge logo, a warm floral projection filling the wall behind him and the crowd in silhouette" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:640/360"><video src="images/the-fridge/video-02.mp4" poster="images/the-fridge/video-02-poster.jpg" playsinline controls preload="none" data-autoplay="off" aria-label="Serge Volant – Live Modular Improv, full performance at The Fridge Concert Series, season 44"></video><button class="vb vb--play" type="button" aria-label="Play with sound">Play</button></figure>
+    </div>
+  </article>
+
+  <article class="project" id="imagine-family-x-automatic-01">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">04</span>
+      <h2>Imagine Family x Automatic 01</h2>
+      <p>LAB stage design for Imagine Family x Automatic’s all night long party at WANDERLUST Paris</p>
+    </div>
+    <div class="collage collage--p-imagine-family-x-automatic-01">
+      <figure class="ph" style="aspect-ratio:1600/1083"><img src="images/imagine-family-x-automatic-01/01.jpg" alt="The LAB room dressed in draped orange and red fabrics, with a lamp-lit DJ booth and patterned rugs, guests arriving" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--tall" style="aspect-ratio:1199/1600"><img src="images/imagine-family-x-automatic-01/02.jpg" alt="Dense crowd in red light under the draped ceiling" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-01/03.jpg" alt="Daytime crowd dancing beneath the striped orange and red drapes" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-01/04.jpg" alt="Drapes gathered into the ceiling above the crowd, daylight coming through the windows" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-01/05.jpg" alt="Guests seen through a sweep of orange fabric in the foreground" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-01/06.jpg" alt="Hands in the air in an orange haze in front of the windows" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide" style="aspect-ratio:1253/848"><img src="images/imagine-family-x-automatic-01/07.jpg" alt="The empty LAB set before doors: drapes, rugs and the booth under a single lamp" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="imagine-family-x-automatic-02">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">05</span>
+      <h2>Imagine Family x Automatic 02</h2>
+      <p>LAB + CLUB stage design for Imagine Family x Automatic’s all night long party at WANDERLUST Paris</p>
+    </div>
+    <div class="collage collage--p-imagine-family-x-automatic-02">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1056/544"><video src="images/imagine-family-x-automatic-02/video-01.mp4" poster="images/imagine-family-x-automatic-02/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Clip from the party: dancers under the draped white fabrics in warm light"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-02/01.jpg" alt="The crowd dancing under a canopy of orange-lit drapes, lit rings glowing above the booth" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-02/02.jpg" alt="A DJ in an orange shirt at the decks in front of blue and white patterned drapes" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-02/03.jpg" alt="A DJ in a purple shirt playing amid the blue drapes, a brass light fitting overhead" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-02/04.jpg" alt="Two ring lights above the booth, drapes in orange and white behind" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide" style="aspect-ratio:1600/1066"><img src="images/imagine-family-x-automatic-02/05.jpg" alt="Draped white and blue fabrics against the windows, the crowd in silhouette" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="paname-all-starz">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">06</span>
+      <h2>Paname All Starz</h2>
+      <p>LAB + CLUB + TERRACE stage design for Paname All Starz at WANDERLUST Paris</p>
+    </div>
+    <div class="collage collage--p-paname-all-starz">
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/paname-all-starz/01.jpg" alt="A scaffold cube hung with white light tubes and mirror balls above the dance floor, bathed in magenta" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/paname-all-starz/02.jpg" alt="The CLUB room in deep red with vertical orange light bars behind the DJs" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1170/811"><img src="images/paname-all-starz/03.jpg" alt="A glowing pink sphere above the crowd on the terrace at night" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1200"><img src="images/paname-all-starz/04.jpg" alt="The terrace bar under red-lit drapes with the pink sphere in the window" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="la-ruche">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">07</span>
+      <h2>La Ruche</h2>
+      <p>Set design for La Ruche Audio, Paris 18</p>
+    </div>
+    <div class="collage collage--p-la-ruche">
+      <figure class="ph ph--tall" style="aspect-ratio:1309/1600"><img src="images/la-ruche/01.jpg" alt="The stage: a wall of stacked wooden crates lit in pink and blue with neon tubes, under a draped fabric canopy" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1163/965"><img src="images/la-ruche/02.jpg" alt="The crowd under the coloured fabric canopy, the crate wall and neon glowing behind" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="le-sample">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">08</span>
+      <h2>Le Sample</h2>
+      <p>Set design for Le Sample day party</p>
+    </div>
+    <div class="collage collage--p-le-sample">
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/le-sample/01.jpg" alt="A DJ behind the decks under a wooden pergola, white drapes, plum-coloured discs and tall cacti around her" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/le-sample/02.jpg" alt="Close view of the booth flanked by cacti and a plum disc, drapes lit warm behind" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/le-sample/03.jpg" alt="Guests dancing in front of the booth in the late-afternoon light" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/le-sample/04.jpg" alt="The booth seen over the shoulders of the crowd, disc and cacti in frame" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="interlude-01-house-session">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">09</span>
+      <h2>Interlude 01 - House Session</h2>
+      <p>Production design for Interludes &amp; friends listening sessions 01</p>
+    </div>
+    <div class="collage collage--p-interlude-01-house-session">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-01-house-session/video-01.mp4" poster="images/interlude-01-house-session/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of the Interlude 01 music video: a musician playing among giant illuminated flower sculptures"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-01-house-session/01.jpg" alt="A musician with a guitar behind a mixing desk, surrounded by large flower sculptures glowing blue, red and orange in a dark room" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-01-house-session/02.jpg" alt="The same set with the flower sculptures lit in warm orange and white" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-01-house-session/03.jpg" alt="The flower sculptures lit in white, cyan and orange around the musician" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-01-house-session/04.jpg" alt="Close view of the red, blue, white and orange flower sculptures around the desk" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="interlude-02-blue-rose">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">10</span>
+      <h2>Interlude 02 - Blue Rose</h2>
+      <p>Production design for Interludes &amp; friends listening sessions 02</p>
+    </div>
+    <div class="collage collage--p-interlude-02-blue-rose">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-02-blue-rose/video-01.mp4" poster="images/interlude-02-blue-rose/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of the Blue Rose session: projections shifting across hanging sheer fabrics around the DJ on the mezzanine"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/1065"><img src="images/interlude-02-blue-rose/01.jpg" alt="Inside the venue: sheer fabrics hung from the mezzanine carry moving projections while the DJ plays above and guests stand below by a metal staircase" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-02-blue-rose/02.jpg" alt="Outside the venue at night: a crowd looks through the arched doorway at the projections glowing inside" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide" style="aspect-ratio:1600/1065"><img src="images/interlude-02-blue-rose/03.jpg" alt="Close view of the projected fabrics: swirling red, blue and white patterns over the speakers and mixing desk" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="interlude-03-nouveau-magnolia">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">11</span>
+      <h2>Interlude 03 - Nouveau Magnolia</h2>
+      <p>Production design for Interludes &amp; friends listening sessions 03</p>
+    </div>
+    <div class="collage collage--p-interlude-03-nouveau-magnolia">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-03-nouveau-magnolia/video-01.mp4" poster="images/interlude-03-nouveau-magnolia/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of the Nouveau Magnolia session: projected leaf and petal shapes drifting over the sheer backdrop and the two performers"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-03-nouveau-magnolia/01.jpg" alt="Two musicians at their desks in front of a sheer backdrop covered in projected pink, blue and orange leaf shapes" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-03-nouveau-magnolia/02.jpg" alt="Closer view of the performers with the projected magnolia shapes falling across them" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide" style="aspect-ratio:1600/1200"><img src="images/interlude-03-nouveau-magnolia/03.jpg" alt="The audience in the dark looking towards the lit stage and projected shapes" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="interlude-04-limpasse">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">12</span>
+      <h2>Interlude 04 - L’impasse</h2>
+      <p>Production design for Interludes &amp; friends listening sessions 04</p>
+    </div>
+    <div class="collage collage--p-interlude-04-limpasse">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-04-limpasse/video-01.mp4" poster="images/interlude-04-limpasse/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of the L’impasse session: glowing discs and zigzag banners lit in red, teal and blue behind the performers"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph ph--tall" style="aspect-ratio:810/1033"><img src="images/interlude-04-limpasse/01.jpg" alt="Portrait view of the stage: orange glowing discs and pink zigzag banners frame the performers" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide" style="aspect-ratio:959/728"><img src="images/interlude-04-limpasse/02.jpg" alt="Wide view of the courtyard venue at night, the lit stage seen between two pillars" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="interlude-05-limpasse-bis">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">13</span>
+      <h2>Interlude 05 - L’impasse bis</h2>
+      <p>Production design for Interludes &amp; friends listening sessions 05</p>
+    </div>
+    <div class="collage collage--p-interlude-05-limpasse-bis">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-05-limpasse-bis/video-01.mp4" poster="images/interlude-05-limpasse-bis/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of Hungu’s set: a cloud-shaped screen glowing above the duo, warm projections on the sheer backdrop"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/900"><img src="images/interlude-05-limpasse-bis/01.jpg" alt="Two musicians under a cloud-shaped screen lit in soft blue, the backdrop washed in warm light" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/900"><img src="images/interlude-05-limpasse-bis/02.jpg" alt="The cloud screen glowing blue above a seated performer, projections on the wall behind" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-05-limpasse-bis/video-02.mp4" poster="images/interlude-05-limpasse-bis/video-02-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of Joy’s set: the cloud screen lit in orange and blue over the performer"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/900"><img src="images/interlude-05-limpasse-bis/03.jpg" alt="The cloud screen in bright blue and white against orange-lit drapes" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/900"><img src="images/interlude-05-limpasse-bis/04.jpg" alt="The cloud screen glowing orange and white above the performer" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+    </div>
+  </article>
+
+  <article class="project" id="interlude-06-the-wrong-side">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">14</span>
+      <h2>Interlude 06 - The Wrong Side</h2>
+      <p>Production design for Interludes &amp; friends listening sessions 06</p>
+    </div>
+    <div class="collage collage--p-interlude-06-the-wrong-side">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-06-the-wrong-side/video-01.mp4" poster="images/interlude-06-the-wrong-side/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet 1 of The Wrong Side: a guitarist plays beside a glowing moon-shaped cut-out with projected figures"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/1067"><img src="images/interlude-06-the-wrong-side/01.jpg" alt="Drummer and guitarist on stage, a dancer silhouetted against a glowing white disc, pink shapes floating around" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-06-the-wrong-side/video-02.mp4" poster="images/interlude-06-the-wrong-side/video-02-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet 2: the guitarist in profile with the drum kit and the darkened set"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-06-the-wrong-side/video-03.mp4" poster="images/interlude-06-the-wrong-side/video-03-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet 3: a dancer moves in front of the white disc lit in orange"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/900"><img src="images/interlude-06-the-wrong-side/02.jpg" alt="The set lit in purple: a dancer in front of the disc, projected shapes on the backdrop" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-06-the-wrong-side/video-04.mp4" poster="images/interlude-06-the-wrong-side/video-04-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet 4: blue and teal shapes projected around the dancer and the band"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/900"><img src="images/interlude-06-the-wrong-side/03.jpg" alt="The set lit in warm orange and white with pink and blue projected forms" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-06-the-wrong-side/video-05.mp4" poster="images/interlude-06-the-wrong-side/video-05-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Behind the scenes: setting up the disc and projections before the session"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+    </div>
+  </article>
+
+  <article class="project" id="interlude-07-lebanon-concert">
+    <div class="project__head">
+      <span class="project__num" aria-hidden="true">15</span>
+      <h2>Interlude 07 - Lebanon Concert</h2>
+      <p>Production design for Interludes &amp; friends 3 acts live music concert</p>
+    </div>
+    <div class="collage collage--p-interlude-07-lebanon-concert">
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1280/720"><video src="images/interlude-07-lebanon-concert/video-01.mp4" poster="images/interlude-07-lebanon-concert/video-01-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Snippet of the Bekaata concert: the band plays under a set of window shutters and an arched frame glowing with projections among the trees"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+      <figure class="ph" style="aspect-ratio:1600/900"><img src="images/interlude-07-lebanon-concert/01.jpg" alt="The set by day: painted shutters and an arched frame mounted on a timber beam between the trees, speakers and a ladder on the stage" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph" style="aspect-ratio:1600/1200"><img src="images/interlude-07-lebanon-concert/02.jpg" alt="The crowd at night in front of the glowing shutters, the trees lit blue and pink" loading="lazy" decoding="async" onerror="this.remove()"></figure>
+      <figure class="ph ph--wide ph--video" style="aspect-ratio:1024/576"><video src="images/interlude-07-lebanon-concert/video-02.mp4" poster="images/interlude-07-lebanon-concert/video-02-poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Short clip of the concert from the crowd"></video><button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button></figure>
+    </div>
+  </article>
+</section>
+
+<footer class="foot" id="footer">
+  <div>
+    <p class="foot__name">Mia El Khazen</p>
+    <p class="foot__meta">Architect · Production Designer · Paris</p>
+    <p class="foot__contact"><a href="mailto:mia.elk.pro@gmail.com">mia.elk.pro@gmail.com</a><a href="tel:+33651356310">+33 6 51 35 63 10</a></p>
+  </div>
+  <nav aria-label="Footer"><a href="#work">Work</a><a href="#about">About</a><a href="#top">Top ↑</a></nav>
+</footer>
+
+</main>
+
+<script>
+/* Reveal on scroll, the slim top bar, and the videos: muted in-view loops with a Sound
+   toggle (one clip with sound at a time); long recordings (data-autoplay="off") wait for
+   Play and then show native controls. Reduced motion: everything is simply visible. */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, hasIO='IntersectionObserver' in window;
+  var slots=[].slice.call(document.querySelectorAll('.ph'));
+  if(hasIO&&!reduce){
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:.08});
+    slots.forEach(function(el){ro.observe(el);});
+  }else{ slots.forEach(function(el){el.classList.add('in');}); }
+
+  var bar=document.querySelector('.topbar'), heroTop=document.querySelector('.hero__top'), work=document.querySelector('.work');
+  if(bar&&hasIO&&heroTop&&work){
+    new IntersectionObserver(function(es){bar.classList.toggle('is-on',!es[0].isIntersecting);}).observe(heroTop);
+    new IntersectionObserver(function(es){bar.classList.toggle('topbar--blue',es[0].isIntersecting);},{rootMargin:'0px 0px -100% 0px'}).observe(work);
+  }
+
+  var vids=[].slice.call(document.querySelectorAll('.ph--video video'));
+  function sync(v){var b=v.parentNode.querySelector('.vb--sound');if(!b)return;b.setAttribute('aria-pressed',String(!v.muted));b.textContent=v.muted?'Sound':'Mute';b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off');}
+  function muteOthers(cur){vids.forEach(function(o){if(o!==cur&&!o.muted){o.muted=true;sync(o);}});}
+  vids.forEach(function(v){
+    var fig=v.parentNode;
+    if(v.dataset.autoplay==='off'){
+      v.removeAttribute('controls');   /* native controls return once Play is pressed */
+      var play=fig.querySelector('.vb--play');
+      var start=function(){v.controls=true;v.muted=false;muteOthers(v);v.play().catch(function(){});fig.classList.add('is-playing');};
+      if(play)play.addEventListener('click',start);
+      v.addEventListener('play',function(){fig.classList.add('is-playing');});
+      return;
+    }
+    v.removeAttribute('controls'); v.muted=true;
+    var b=fig.querySelector('.vb--sound');
+    var toggle=function(){v.muted=!v.muted;if(!v.muted){muteOthers(v);v.play().catch(function(){});}sync(v);};
+    if(b){b.addEventListener('click',toggle);v.addEventListener('click',toggle);}
+  });
+  if(hasIO&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(v.dataset.autoplay==='off')return;if(e.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{threshold:.35});
+    vids.forEach(function(v){io.observe(v);});
+  }
+})();
+</script>
+</body>
+</html>
