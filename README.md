@@ -42,7 +42,7 @@ size. Then:
    markers in `index.html` is regenerated. The result is recorded in
    `tools/layouts.json`; to place a project by hand, set `"manual": true`
    on its key and edit the slots, then run the tool again. The tool also
-   inserts the video buttons and hero captions, so re-run it whenever
+   inserts the video buttons, so re-run it whenever
    media changes. Videos play muted while in view and pause off-screen;
    the Sound pill turns audio on for one clip at a time, and long
    recordings wait for Play.
@@ -59,9 +59,10 @@ arrangement; run `python3 tools/layout.py --reseed` to reshuffle.
 
 - Vanilla HTML / CSS — no build step, all styles inline in `index.html`
 - Anton + Bebas Neue from Google Fonts (the two faces embedded in the brief)
-- Flat paper background with a CSS/SVG grain; on mobile, collages flow in two columns with full-width videos
-- Slim top bar that appears once the hero scrolls away, numbered project headers, hover captions on the
-  hero thumbnails, a gentle reveal on scroll (off under reduced motion), and a footer with back-to-top
+- Flat paper background with a CSS/SVG grain; on phones, project collages flow in two columns with
+  full-width videos, while the hero keeps its own overlapping arrangement
+- Slim top bar that appears once the hero scrolls away, numbered project headers, a gentle reveal on
+  scroll (off under reduced motion), and a footer with email, phone and back-to-top
 - Colours and type rules: `brand_assets/COLOURS.md`
 - `vercel.json` for deploy (clean URLs, cache and security headers)
 
