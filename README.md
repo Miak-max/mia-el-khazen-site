@@ -50,9 +50,10 @@ size. Then:
 Source folders, `brief/` and `shots/` are excluded from deploys by
 `.vercelignore`. Missing images simply leave a grey slot.
 
-The eight hero squares are project placeholders: they link to the first
-eight projects (Blue Bay → Le Sample) and show each project's `cover.jpg`,
-or its `01.jpg` if there is no cover. Hero slots 3, 6 and 7 are portrait.
+The hero is a dense, overlapping collage of all fifteen projects (see
+`Reference.png`), each linking to its project and showing its `cover.jpg`,
+or its `01.jpg` if there is no cover. Desktop and phones get their own
+arrangement; run `python3 tools/layout.py --reseed` to reshuffle.
 
 ## Tech
 
@@ -66,7 +67,8 @@ or its `01.jpg` if there is no cover. Hero slots 3, 6 and 7 are portrait.
 
 ## Still to do
 
-- Domain: then add canonical, `og:url`, an `og:image` and `sitemap.xml`
+- Point miaelkhazen.com at Vercel in GoDaddy DNS (A `@` → the IP Vercel shows, usually
+  `76.76.21.21`; CNAME `www` → `cname.vercel-dns.com`). Canonical, share image and sitemap are done.
 - All fifteen projects have their media in place (8 Sep 2026). Self-hosted video now totals ~200 MB; if the site
   grows further, move the clips to a video host (e.g. Cloudinary) and keep the slots as they are
 - Social links (Instagram etc.) if wanted — the footer has email and phone

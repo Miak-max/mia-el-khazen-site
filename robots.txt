@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /brief/
 
-# Sitemap: https://<domain>/sitemap.xml  (add once the domain is confirmed)
+Sitemap: https://miaelkhazen.com/sitemap.xml
