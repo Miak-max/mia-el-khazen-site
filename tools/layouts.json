@@ -1,48 +1,48 @@
 {
  "hero": {
+  "manual": false,
   "slots": [
    {
-    "left": 36.4,
-    "top": 0,
-    "width": 29.2
+    "left": 2.16,
+    "top": 0.0,
+    "width": 34
    },
    {
-    "left": 0,
-    "top": 4,
-    "width": 33
+    "left": 46.17,
+    "top": 6.72,
+    "width": 31
    },
    {
-    "left": 69.0,
-    "top": 8,
-    "width": 31.0
+    "left": 17.95,
+    "top": 26.66,
+    "width": 24
    },
    {
-    "left": 40.49,
-    "top": 22.85,
-    "width": 25.11
+    "left": 72.27,
+    "top": 44.53,
+    "width": 27
    },
    {
-    "left": 73.34,
-    "top": 28.84,
-    "width": 26.66
+    "left": 48.87,
+    "top": 36.74,
+    "width": 20
    },
    {
-    "left": 4.62,
-    "top": 29.36,
-    "width": 28.38
+    "left": 0.09,
+    "top": 48.05,
+    "width": 31
    },
    {
-    "left": 36.4,
-    "top": 43.25,
-    "width": 29.2
+    "left": 38.65,
+    "top": 61.68,
+    "width": 27
    },
    {
-    "left": 69.0,
-    "top": 50.0,
-    "width": 31.0
+    "left": 4.08,
+    "top": 83.51,
+    "width": 31
    }
-  ],
-  "manual": false
+  ]
  },
  "blue-bay": {
   "slots": [

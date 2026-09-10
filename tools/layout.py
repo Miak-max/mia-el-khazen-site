@@ -15,10 +15,10 @@ How a collage is built (per project, and the hero):
     width) into the CSS between the LAYOUTS markers, and each slot gets
     style="aspect-ratio:W/H" from its own file so its height follows its media.
 tools/layouts.json records the generated slots; set "manual": true on a key and edit its
-slots to take over by hand. Also inserts the sound / play buttons and hero captions.
+slots to take over by hand. Also inserts the sound / play buttons.
 Run after build_images.py, and after editing layouts.json.
 """
-import json, os, re
+import json, os, random, re
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,14 +36,46 @@ def aspect(item):
     w, h = Image.open(path).size
     return w / h, f"{w}/{h}"
 
+def scatter(aspects, seed=12, widths=(20, 24, 27, 31, 34), tries=140):
+    """Free, deliberately unaligned placement: no columns, no shared edges.
+
+    Each item takes one of a few widths, then we test many random x positions and keep the
+    one that sits highest without touching anything already placed (a minimum gap on all
+    sides). The seed keeps it stable between runs — change it to reshuffle the scatter."""
+    rnd = random.Random(seed)
+    placed = []
+    for i, a in enumerate(aspects):
+        w = widths[rnd.randrange(len(widths))]
+        if i == 0:
+            w = max(widths)                      # open on a larger piece
+        h = w / a
+        best = None
+        for _ in range(tries):
+            x = rnd.uniform(0, 100 - w)
+            y = 0.0
+            for (px, py, pw, ph) in placed:
+                if x < px + pw + GUT and px < x + w + GUT:
+                    y = max(y, py + ph + GUT)
+            # avoid sharing an edge with anything: nudge off any near-alignment
+            for (px, py, pw, ph) in placed:
+                if abs(x - px) < 2: x += 2.6
+                if abs((x + w) - (px + pw)) < 2: x -= 2.6
+            x = min(max(x, 0), 100 - w)
+            score = y + rnd.uniform(0, 3.5)      # jitter so it never packs into rows
+            if best is None or score < best[0]:
+                best = (score, x, y)
+        _, x, y = best
+        y += rnd.uniform(0, 14) if i else 0      # stagger: tops never line up
+        placed.append((x, y, w, h))
+    return [(x, y, w) for (x, y, w, h) in placed], None
+
 def compose(aspects, hero=False):
     n = len(aspects)
     if n == 1:
         return [(0, 0, 66)], None
     if hero:
-        cols = [(0, 33), (33 + GUT, 29.2), (33 + GUT + 29.2 + GUT, 100 - (33 + GUT + 29.2 + GUT))]
-        starts = [4, 0, 8]; lead_span = 0
-    elif n <= 5:
+        return scatter(aspects)
+    if n <= 5:
         cols = [(0, 60), (60 + GUT, 100 - 60 - GUT)]
         starts = [0, 7]; lead_span = 1
     else:
@@ -111,9 +143,6 @@ def rebuild(collage_html, key, class_name, hero=False):
             else:
                 btn = '<button class="vb vb--sound" type="button" aria-pressed="false" aria-label="Turn sound on">Sound</button>'
             body = body.replace("</video>", "</video>" + btn, 1)
-        if it.startswith("<a") and "ph__cap" not in body:
-            title = re.search(r'aria-label="([^"]+)"', head).group(1)
-            body = body.replace("</a>", f'<span class="ph__cap">{title}</span></a>')
         out.append("      " + head + body)
     css.append(f"  .{class_name}{{aspect-ratio:100/{bottom:.2f}}}")
     for i, (l, t, w) in enumerate(pos, 1):
