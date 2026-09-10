@@ -36,33 +36,38 @@ def aspect(item):
     w, h = Image.open(path).size
     return w / h, f"{w}/{h}"
 
-DESKTOP = dict(widths=(14, 17, 20, 23, 26, 30, 34, 38), bleed=5.0, first=34, target=62)
-MOBILE  = dict(widths=(34, 40, 46, 52, 58), bleed=3.0, first=64, target=135)
+# air: gap under a piece (fraction of the narrower width); bite: the occasional light overlap;
+# p_bite: share of pieces that overlap; hpad: minimum side-by-side margin (% of width)
+DESKTOP = dict(widths=(16, 19, 22, 25, 28), bleed=2.0, first=30, target=74, air=(0.12, 0.34), bite=(0.05, 0.12),
+               p_bite=0.3, hpad=2.4, min_vis=0.9, cover=0.40)
+MOBILE  = dict(widths=(38, 44, 50, 56), bleed=1.5, first=60, target=215, air=(0.10, 0.28), bite=(0.04, 0.10),
+               p_bite=0.25, hpad=3.5, min_vis=0.9, cover=0.45)
 
-def scatter(aspects, seed=58, tries=160, widths=DESKTOP["widths"], bleed=DESKTOP["bleed"], first=DESKTOP["first"], min_vis=0.62, **_):
-    """Dense overlapping collage for the hero (see Reference.png): pieces of very different
-    sizes layered over one another, packed with almost no empty ground and bleeding a little
-    past the edges. Later items sit on top (DOM order = stacking order).
+def scatter(aspects, seed=58, tries=160, widths=DESKTOP["widths"], bleed=2.0, first=30, air=(0.12, 0.34),
+            bite=(0.05, 0.12), p_bite=0.3, hpad=2.4, min_vis=0.9, **_):
+    """Airy scattered collage for the hero: pieces of different sizes floating on the paper
+    with clear space between most of them, and an occasional light overlap for the collage
+    feel (Reference.png, loosened at the user's request: "too crowded, let it breathe").
 
-    Each piece takes a random width, then many x positions are tried: for each, the highest y
-    at which it *overlaps* what is already placed by a random amount is found. A candidate is
-    only accepted if every picture underneath keeps at least `min_vis` of itself visible (so
-    nothing disappears), and the highest accepted candidate wins. Seeds live in
-    tools/layouts.json (hero.seed / hero.seed_m); `--reseed` searches for the most even one."""
+    Each piece gets its own random width and its own spacing (a gap, or with probability
+    p_bite a small overlap) *before* positions are tried, so choosing the highest free spot
+    cannot quietly favour the tightest spacing. Pieces closer than `hpad` side by side count
+    as stacked, so nothing sits flush against a neighbour. Seeds live in tools/layouts.json;
+    `--reseed` searches for the most balanced arrangement."""
     rnd = random.Random(seed)
-    SX, SY = 6, 4                                  # visibility sample grid per picture
-    placed = []                                    # (x, y, w, h, sample points [x, y, hidden?])
+    SX, SY = 6, 4
+    placed = []
     for i, a in enumerate(aspects):
         w = first if i == 0 else widths[rnd.randrange(len(widths))]
         h = w / a
+        frac = rnd.uniform(*bite) if rnd.random() < p_bite else -rnd.uniform(*air)   # >0 overlap, <0 air
         best = fallback = None
         for _ in range(tries):
             x = rnd.uniform(-bleed, 100 - w + bleed)
             y = 0.0
             for (px, py, pw, ph, _p) in placed:
-                if x < px + pw and px < x + w:                     # horizontal overlap
-                    lap = min(w, pw) * rnd.uniform(0.10, 0.42)     # let them bite into each other
-                    y = max(y, py + ph - lap)
+                if x < px + pw + hpad and px < x + w + hpad:
+                    y = max(y, py + ph - min(w, pw) * frac)
             worst = 1.0
             for (px, py, pw, ph, pts) in placed:
                 if x < px + pw and px < x + w and y < py + ph and py < y + h:
@@ -83,20 +88,26 @@ def scatter(aspects, seed=58, tries=160, widths=DESKTOP["widths"], bleed=DESKTOP
         placed.append((x, y, w, h, pts))
     return [(x, y, w) for (x, y, w, h, _p) in placed], [sum(not q[2] for q in p) / len(p) for (*_r, p) in placed]
 
-def evenness(slots, aspects, target):
-    """Share of the collage's area covered by pictures, minus a penalty for drifting from the
-    target height (in % of width). Higher is better."""
+def evenness(slots, aspects, target, cover=None):
+    """How good an arrangement looks, higher is better: coverage close to `cover` (so there is
+    air but no big holes), every quarter of the collage used, picture mass centred left to
+    right, and a height close to `target` (in % of width)."""
     boxes = [(x, y, w, w / a) for (x, y, w), a in zip(slots, aspects)]
     bottom = max(y + h for _, y, _, h in boxes)
-    GX, GY, hit = 20, 12, 0
-    for gx in range(GX):
-        for gy in range(GY):
-            cx, cy = (gx + .5) * 100 / GX, (gy + .5) * bottom / GY
-            hit += any(x <= cx <= x + w and y <= cy <= y + h for x, y, w, h in boxes)
-    return hit / (GX * GY) - abs(bottom - target) / (target * 3.5)
+    GX, GY = 20, 12
+    grid = [[any(x <= (gx + .5) * 100 / GX <= x + w and y <= (gy + .5) * bottom / GY <= y + h for x, y, w, h in boxes)
+             for gy in range(GY)] for gx in range(GX)]
+    cov = sum(map(sum, grid)) / (GX * GY)
+    quads = [sum(grid[gx][gy] for gx in range(qx * GX // 2, (qx + 1) * GX // 2) for gy in range(qy * GY // 2, (qy + 1) * GY // 2)) / (GX * GY / 4)
+             for qx in (0, 1) for qy in (0, 1)]
+    area = sum(w * h for _, _, w, h in boxes)
+    cx = sum((x + w / 2) * w * h for x, _, w, h in boxes) / area
+    score = (cov if cover is None else 1 - abs(cov - cover) * 1.6)
+    score -= max(0, 0.32 - min(quads)) * 2.2 + abs(cx - 50) / 60 + abs(bottom - target) / (target * 3.5)
+    return score
 
-def best_seed(aspects, params, seeds=range(1, 41)):
-    return max(seeds, key=lambda sd: evenness(scatter(aspects, seed=sd, **params)[0], aspects, params["target"]))
+def best_seed(aspects, params, seeds=range(1, 81)):
+    return max(seeds, key=lambda sd: evenness(scatter(aspects, seed=sd, **params)[0], aspects, params["target"], params.get("cover")))
 
 def compose(aspects, hero=False):
     n = len(aspects)

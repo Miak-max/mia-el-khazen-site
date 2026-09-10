@@ -3,158 +3,98 @@
   "manual": false,
   "slots": [
    {
-    "left": 4.95,
+    "left": 15.14,
     "top": 0.0,
-    "width": 34
-   },
-   {
-    "left": 56.65,
-    "top": 0.0,
-    "width": 38
-   },
-   {
-    "left": 39.45,
-    "top": 0.0,
-    "width": 17
-   },
-   {
-    "left": 42.25,
-    "top": 7.63,
-    "width": 14
-   },
-   {
-    "left": 0.34,
-    "top": 11.29,
     "width": 30
    },
    {
-    "left": 30.7,
-    "top": 14.51,
-    "width": 23
+    "left": 60.89,
+    "top": 0.0,
+    "width": 25
    },
    {
-    "left": 81.66,
-    "top": 16.07,
-    "width": 23
+    "left": 58.61,
+    "top": 20.22,
+    "width": 16
    },
    {
-    "left": 55.32,
-    "top": 18.76,
-    "width": 17
+    "left": 77.52,
+    "top": 19.69,
+    "width": 19
    },
    {
-    "left": 32.67,
-    "top": 22.81,
-    "width": 17
+    "left": 13.58,
+    "top": 25.02,
+    "width": 19
    },
    {
-    "left": 5.33,
-    "top": 27.24,
-    "width": 38
+    "left": 36.32,
+    "top": 22.57,
+    "width": 16
    },
    {
-    "left": 47.44,
-    "top": 31.22,
-    "width": 34
+    "left": 77.62,
+    "top": 30.85,
+    "width": 22
    },
    {
-    "left": -4.97,
-    "top": 40.59,
-    "width": 30
+    "left": 37.32,
+    "top": 34.07,
+    "width": 16
    },
    {
-    "left": 85.04,
-    "top": 37.71,
-    "width": 17
-   },
-   {
-    "left": 80.42,
-    "top": 45.54,
-    "width": 23
-   },
-   {
-    "left": 30.86,
-    "top": 46.96,
-    "width": 14
+    "left": 9.84,
+    "top": 43.29,
+    "width": 25
    }
   ],
-  "seed": 7,
-  "seed_m": 10,
+  "seed": 34,
+  "seed_m": 69,
   "slots_m": [
    {
-    "left": 19.37,
+    "left": 24.42,
     "top": 0.0,
-    "width": 64
+    "width": 60
    },
    {
-    "left": 40.69,
-    "top": 26.65,
-    "width": 40
+    "left": 43.95,
+    "top": 47.88,
+    "width": 38
    },
    {
-    "left": 0.31,
-    "top": 26.77,
-    "width": 40
+    "left": 1.05,
+    "top": 45.09,
+    "width": 38
    },
    {
-    "left": 61.45,
-    "top": 37.22,
-    "width": 40
+    "left": 44.94,
+    "top": 82.4,
+    "width": 50
    },
    {
-    "left": 6.41,
-    "top": 40.89,
-    "width": 40
+    "left": -0.43,
+    "top": 123.6,
+    "width": 56
    },
    {
-    "left": 48.49,
-    "top": 50.23,
-    "width": 40
+    "left": 18.03,
+    "top": 171.85,
+    "width": 56
    },
    {
-    "left": -2.92,
-    "top": 58.03,
-    "width": 40
+    "left": 45.37,
+    "top": 200.57,
+    "width": 44
    },
    {
-    "left": 46.33,
-    "top": 67.25,
-    "width": 52
+    "left": 3.76,
+    "top": 212.88,
+    "width": 38
    },
    {
-    "left": 57.84,
-    "top": 87.73,
-    "width": 34
-   },
-   {
-    "left": -2.51,
-    "top": 90.5,
-    "width": 52
-   },
-   {
-    "left": 66.88,
-    "top": 98.36,
-    "width": 34
-   },
-   {
-    "left": 51.64,
-    "top": 107.63,
-    "width": 34
-   },
-   {
-    "left": 15.32,
-    "top": 112.66,
-    "width": 52
-   },
-   {
-    "left": 43.36,
-    "top": 124.77,
-    "width": 58
-   },
-   {
-    "left": 3.28,
-    "top": 132.05,
-    "width": 40
+    "left": 50.13,
+    "top": 236.98,
+    "width": 50
    }
   ]
  },

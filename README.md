@@ -50,8 +50,7 @@ size. Then:
 Source folders, `brief/` and `shots/` are excluded from deploys by
 `.vercelignore`. Missing images simply leave a grey slot.
 
-The hero is a dense, overlapping collage of all fifteen projects (see
-`Reference.png`), each linking to its project and showing its `cover.jpg`,
+The hero is an airy scattered collage of nine project covers, each linking to its project and showing its `cover.jpg`,
 or its `01.jpg` if there is no cover. Desktop and phones get their own
 arrangement; run `python3 tools/layout.py --reseed` to reshuffle.
 
